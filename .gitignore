@@ -63,6 +63,11 @@ instance/
 
 # Scrapy stuff:
 .scrapy
+*.jl
+*.pid
+*.db
+crawls/
+dbs/
 
 # Sphinx documentation
 docs/_build/
@@ -103,4 +108,3 @@ ENV/
 # mypy
 .mypy_cache/
 
-*.pyc
