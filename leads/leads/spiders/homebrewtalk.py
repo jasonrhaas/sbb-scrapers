@@ -113,13 +113,15 @@ class HomebrewtalkSpider(scrapy.Spider):
 
         # user['general_interests'] = response.css('strong').css('a::text').extract()
 
+        # Top profile
         try:
-            user['age'] = response.css('div.profile-top').re(r'(?<=Age:<\/small><\/p><div class="newline"><\/div>)\d+')[0]
-        except:
-            logging.debug('Age not found.')
-        # user['birthday'] = response.css('div.profile-top').re(r"(?<=Birthday:<\/small><div class='newline'><\/div>)\d+\/\d+\/\d+")
+            user['join_date'] = response.css('div.profile-top').re(r'Join Date.+?(\d{2}-\d+-\d+)')[0]
+            user['last_activity'] = response.css('div.profile-top').re(r'Last\sActivity.+?(\d{2}-\d{2}-\d{4})')[0]
+            user['age'] = response.css('div.profile-top').re(r'Age.+?(\d+)')[0]
+        except IndexError as e:
+            logging.warning("Didn't find a field to extract")
 
-        # About me section
+        # Bottom profile - About me section
         for item in response.css('div.profile-bottom').css('li'):
             label = item.css('label::text').extract_first().strip(' :')
             value = item.css('strong::text').extract_first()
