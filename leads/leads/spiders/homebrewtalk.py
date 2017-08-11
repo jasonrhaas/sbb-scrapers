@@ -106,9 +106,18 @@ class HomebrewtalkSpider(scrapy.Spider):
     def parse_profile(self, response):
         logging.info("STARTING NEW PROFILE SCRAPE")
 
-        user = response.meta['user']
+        try:
+            user = response.meta['user']
+        except KeyError:
+            user = UserItem()
 
         # user['general_interests'] = response.css('strong').css('a::text').extract()
+
+        try:
+            user['age'] = response.css('div.profile-top').re(r'(?<=Age:<\/small><\/p><div class="newline"><\/div>)\d+')[0]
+        except:
+            logging.debug('Age not found.')
+        # user['birthday'] = response.css('div.profile-top').re(r"(?<=Birthday:<\/small><div class='newline'><\/div>)\d+\/\d+\/\d+")
 
         # About me section
         for item in response.css('div.profile-bottom').css('li'):
