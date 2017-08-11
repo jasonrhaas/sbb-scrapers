@@ -1,0 +1,14 @@
+setup.py
+leads/__init__.py
+leads/items.py
+leads/middlewares.py
+leads/pipelines.py
+leads/processors.py
+leads/settings.py
+leads/spiders/__init__.py
+leads/spiders/homebrewtalk.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

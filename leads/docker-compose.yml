@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  # mongodb:
+  #   image: mongo:latest
+  #   ports: 
+  #     - 27017:27017
+
+  elk:
+    image: sebp/elk:latest
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
