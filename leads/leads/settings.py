@@ -75,6 +75,10 @@ ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
 ELASTICSEARCH_TYPE = 'items'
 ELASTICSEARCH_UNIQ_KEY = 'user_id'  # Custom uniqe key
 
+# FEED_URI = 's3://homebrewtalk/output.jl'
+# FEED_FORMAT = 'jsonlines'
+
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
