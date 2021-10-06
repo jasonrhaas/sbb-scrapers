@@ -27,7 +27,7 @@ queuelib==1.4.2
 requests==2.18.3
 retrying==1.3.3
 scrapinghub==2.0.1
-Scrapy==1.4.0
+Scrapy==1.8.1
 ScrapyElasticSearch==0.8.9
 service-identity==17.0.0
 shub==2.7.0
